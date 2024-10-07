@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svart T-Shirt</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <a href="#">
+            <img src="img/LogoV5.png" alt="" width="100px">
+        </a>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
+
+        <nav class="navbar">
+            <a href="#">Nyheter</a>
+            <a href="#">Topplistan</a>
+            <a href="#">Rea</a>
+            <a href="#">Kampanjer</a>
+            <a href="#"><i class='bx bxs-heart' ></i></a>
+            <a href="#"><i class='bx bxs-cart' ></i></i></a>
+        </nav>
+
+        <!-- Sök -->
+        <div class="search-container">
+          <input type="text" placeholder="Sök..." class="search-input">
+          <button class="search-btn"><i class='bx bx-search'></i></button>
+        </div>
+    </header>
+    <main>
+        <div class="product-container">
+            <img src="img/svart7.jpg" alt="Product Image" class="product-image">
+            <div class="product-info">
+              <h2 class="product-title">Svart T-Shirt</h2>
+              <p class="product-category">Levis</p>
+              <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis
+                nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat.</p>
+              <p class="product-price">199 SEK</p>
+              <button class="add-to-cart">Lägg i varukorg   </button>
+            </div>
+        </div>
+
+       <!-- Liknande produkter rubrik -->
+  <div class="similar-products-container">
+    <h2>Liknande produkter</h2>
+
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+      <!-- Vänster knapp -->
+      <button class="prev" onclick="prevSlide()">&#10094;</button>
+
+      <!-- Slideshow -->
+      <div class="slideshow">
+        <div class="slide">
+          <a href="#">
+          <img src="img/Hoodie.jpeg" alt="Product 1">
+          </a>
+          <h3>Svart T-Shirt</h3>
+          <p>Levis</p>
+          <p class="price">199 SEK</p>
+        </div>
+        <div class="slide">
+          <a href="#">
+          <img src="img/Hoodie.jpeg" alt="Product 2">
+          </a>
+          <h3>Svart T-Shirt</h3>
+          <p>Levis</p>
+          <p class="price">199 SEK</p>
+        </div>
+        <div class="slide">
+          <a href="#">
+          <img src="img/Hoodie.jpeg" alt="Product 3">
+          </a>
+          <h3>Svart T-Shirt</h3>
+          <p>Levis</p>
+          <p class="price">199 SEK</p>
+        </div>
+        <div class="slide">
+          <a href="#">
+          <img src="img/Hoodie.jpeg" alt="Product 4">
+          </a>
+          <h3>Svart T-Shirt</h3>
+          <p>Levis</p>
+          <p class="price">199 SEK</p>
+        </div>
+        <div class="slide">
+          <a href="#">
+          <img src="img/Hoodie.jpeg" alt="Product 5">
+          </a>
+          <h3>Svart T-Shirt</h3>
+          <p>Levis</p>
+          <p class="price">199 SEK</p>
+        </div>
+        <div class="slide">
+          <a href="#">
+          <img src="img/Hoodie.jpeg" alt="Product 6">
+          </a>
+          <h3>Svart T-Shirt</h3>
+          <p>Levis</p>
+          <p class="price">199 SEK</p>
+        </div>
+      </div>
+
+      <!-- Höger knapp -->
+      <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script> <!-- Länk till JavaScript filen -->
+
+    <!-- Ikon och text sektion -->
+    <section class="icon-text-section">
+      <div class="icon-text">
+          <i class='bx bx-world'></i>
+          <h4>Gratis frakt och returer</h4>
+      </div>
+      <div class="icon-text">
+          <i class='bx bxs-plane-alt' ></i>
+          <h4>Expressfrakt</h4>
+      </div>
+      <div class="icon-text">
+          <i class='bx bx-shield'></i>
+          <h4>Säkra betalningar</h4>
+      </div>
+      <div class="icon-text">
+          <i class='bx bx-smile' ></i>
+          <h4>Nyheter varje dag</h4>
+      </div>
+  </section>
+
+    </main>
+
+    <!-- Footern med accordion -->
+    <footer>
+      <div class="accordion-footer">
+          <div class="accordion-item">
+            <button class="accordion-header">Shopping</button>
+            <div class="accordion-content">
+              <ul>
+                <li><a href="#">Vinterjackor</a></li>
+                <li><a href="#">Pufferjackor</a></li>
+                <li><a href="#">Kappa</a></li>
+                <li><a href="#">Trenchcoats</a></li>
+              </ul>
+            </div>
+          </div>
+      
+          <div class="accordion-item">
+            <button class="accordion-header">Mina sidor</button>
+            <div class="accordion-content">
+              <ul>
+                <li><a href="#">Mina Ordrar</a></li>
+                <li><a href="#">Mitt Konto</a></li>
+              </ul>
+            </div>
+          </div>
+      
+          <div class="accordion-item">
+            <button class="accordion-header">Kundtjänst</button>
+            <div class="accordion-content">
+              <ul>
+                <li><a href="#">Returnpolicy</a></li>
+                <li><a href="#">Integritetspolicy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+         <!-- Copyright -->
+          <div class="copyright-section">
+              &copy; Freaky Fashion
+          </div>
+
+        <!-- Länk till JavaScript filen -->
+        <script src="accordion.js"></script>
+  </footer>
+</body>
+</html>

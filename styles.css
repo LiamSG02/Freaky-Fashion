@@ -9,38 +9,63 @@ body {
 }
 
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1.3rem 10%;
-    background: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.3rem 10%;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
 }
 
 .navbar a {
-    font-size: 1.15rem;
-    color: #000;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 2.5rem;
+  font-size: 1.15rem;
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 2.5rem;
 }
 
 #check {
-    display: none;
+  display: none;
 }
 
 .icons {
-    position: absolute;
-    right: 5%;
-    font-size: 2.8rem;
-    color: #000;
-    cursor: pointer;
-    display: none;
+  position: absolute;
+  right: 5%;
+  font-size: 2.8rem;
+  color: #000;
+  cursor: pointer;
+  display: none;
+}
+
+/* Search bar styles */
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
 }
 
 #hero {
@@ -70,6 +95,68 @@ body {
     max-width: 60%;
 }
 
+.navbar input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 1.15rem;
+}
+
+.spots-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.spot {
+  width: 30%;
+  position: relative;
+  text-decoration: none;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%; 
+  overflow: hidden;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Remove any text decoration on the anchor links */
+.spot:hover .text-overlay {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Göm sektionen på skärmar mindre än 1024px */
+@media (max-width: 1023px) {
+  .spots-section {
+      display: none;
+  }
+}
 
 @media only screen and (max-width: 768px) {
     html {
@@ -77,82 +164,123 @@ body {
     }
 }
 
-/* Breakpoints / Responsive */ 
+/* Breakpoints / Responsiv */ 
 @media (max-width: 992px) {
     .header {
         padding: 1.3rem 5%;
     }
+
+    .search-container {
+      margin-left: auto;
+  }
 }
 
 @media (max-width: 768px) {
-    .icons {
-        display: inline-flex;
-    }
+  .icons {
+      display: inline-flex;
+  }
 
-    #check:checked~.icons #menu-icon {
-        display: none;
-    }
+  #check:checked~.icons #menu-icon {
+      display: none;
+  }
 
-    .icons #close-icon {
-        display: none;
-    }
+  .icons #close-icon {
+      display: none;
+  }
 
-    #check:checked~.icons #close-icon {
-        display: block;
-    }
+  #check:checked~.icons #close-icon {
+      display: block;
+  }
 
-    .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        height: 0;
-        background: #fff;
-        overflow: hidden;
-        transition: .3s ease;
-    }
+  .navbar {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background: #fff;
+      overflow: hidden;
+      transition: .3s ease;
+  }
 
-    #check:checked~.navbar {
-        height: 20rem;
-    }
+  #check:checked~.navbar {
+      height: 20rem;
+  }
 
-    .navbar a {
-        display: block;
-        font-size: 1.1rem;
-        margin: 1.5rem 0; 
-        text-align: center;
-        transform: translateY(-50px);
-        transition: .3s ease;
-    }
+  .navbar a {
+      display: block;
+      font-size: 1.1rem;
+      margin: 1.5rem 0;
+      text-align: center;
+      transform: translateY(-50px);
+      transition: .3s ease;
+  }
 
-    #check:checked~.navbar a {
-        transform: translateY(0);
-    }
+  #check:checked~.navbar a {
+      transform: translateY(0);
+  }
+
+  /* Flyttar sök rutan under meny ikonen vid mobil */
+  .search-container {
+      display: none;
+  }
+
+  #check:checked~.search-container {
+      display: flex;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      padding: 1rem;
+      background-color: white;
+      width: 100%;
+      justify-content: center;
+  }
+
+  .search-input {
+      width: 70%;
+  }
 }
 
-/* Product Section Styling */
+/* Produkt sektion styling */
 .product-section {
     display: grid;
-    grid-template-columns: 1fr; /* 1 column by default */
+    grid-template-columns: 1fr;
     gap: 20px;
     padding: 20px;
 }
 
-/* Media Query for iPad width (2 columns) */
+.product-section a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+/* Gör att hela kortet är klickbart */
+.product-section a {
+  display: block;
+}
+
+/* Hover effekt på produkt korten */
+.product-section a:hover .product-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02); 
+  transition: 0.3s ease-in-out;
+}
+
+/* Media Query för iPad (2 kolumner) */
 @media (min-width: 600px) {
     .product-section {
         grid-template-columns: repeat(2, 1fr); /* 2 columns */
     }
 }
 
-/* Media Query for larger screens (4 columns) */
+/* Media Query för större skärmar (4 kolumner) */
 @media (min-width: 1024px) {
     .product-section {
         grid-template-columns: repeat(4, 1fr); /* 4 columns */
     }
 }
 
-/* Product Card Styling */
+/* Produkt kort styling */
 .product-card {
     position: relative;
     background: #f9f9f9;
@@ -163,13 +291,13 @@ body {
     text-align: center;
 }
 
-/* Product Image */
+/* Produkt bild */
 .product-card img {
     width: 100%;
     border-radius: 8px;
 }
 
-/* Heart Icon */
+/* Hjärt ikon */
 .product-card i {
     position: absolute;
     bottom: 10px;
@@ -179,7 +307,7 @@ body {
     cursor: pointer;
 }
 
-/* New Badge */
+/* Nyhet bricka  */
 .new-badge {
     position: absolute;
     top: 10px;
@@ -192,27 +320,27 @@ body {
     font-weight: bold;
 }
 
-/* Icon and Text Section Styling */
+/* Ikon och text sektiom styling */
 .icon-text-section {
     display: grid;
-    grid-template-columns: 1fr; /* 1 column by default */
+    grid-template-columns: 1fr;
     gap: 20px;
     padding: 20px;
-    margin-top: 40px; /* Space between sections */
-    text-align: center; /* Center text and icon */
+    margin: 40px 0px 40px 0px; 
+    text-align: center;
 }
 
-/* Media Query for iPad width (2 columns) */
+/* Media Query för iPad (2 kolumner) */
 @media (min-width: 600px) {
     .icon-text-section {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Media Query for larger screens (4 columns) */
+/* Media Query för större skärmar (4 kolumner) */
 @media (min-width: 1024px) {
     .icon-text-section {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -227,4 +355,585 @@ body {
     font-size: 1.2rem;
     color: #333;
     font-weight: 600;
+}
+
+/* Product page CSS */
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 140px;
+    width: 100%;
+    background-color: #fff;
+  }
+  
+  .product-image {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .product-info {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .product-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .product-category {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  .product-description {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .product-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  .add-to-cart {
+    background-color: #ff5a5f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #e04e4e;
+  }
+  
+  /* Media Query för skärmar större eller lika stor som 640px */
+  @media (min-width: 640px) {
+    .product-container {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 40px; 
+      padding-top: 160px;
+    }
+  
+    .product-image {
+      width: 50%; 
+      margin-right: 20px;
+      height: 400px;
+      object-fit: cover;
+      object-position: 50% 25%;
+    }
+  
+    .product-info {
+      flex: 1;
+      text-align: left;
+      margin-top: 0;
+    }
+  }
+
+/* Base Styles */
+.accordion-footer {
+    padding: 20px;
+    background-color: #f8f8f8;
+  }
+  
+  .accordion-item {
+    margin-bottom: 10px;
+  }
+  
+  .accordion-header {
+    background-color: #e0e0e0;
+    padding: 10px 0px 10px 0px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #f8f8f8;
+  }
+  
+  .accordion-content ul {
+    padding: 10px;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .accordion-content a {
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .accordion-content a:hover {
+    text-decoration: underline;
+  }
+
+  /* Copyright */
+  .copyright-section {
+    text-align: center; 
+    padding: 20px 0;    
+    font-size: 14px;    
+    color: #666;       
+    background-color: #f8f8f8;
+  }
+  
+  /* Mobile-only styling (accordion functionality) */
+  @media (max-width: 768px) {
+    .accordion-footer {
+      display: block;
+      background-color: #fff;
+    }
+  
+    .accordion-item {
+      margin-bottom: 10px;
+    }
+  
+    .accordion-header {
+      display: block;
+      background-color: #e0e0e0;
+      padding-left: 10px;
+    }
+  
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+
+    .copyright-section {
+      background-color: #fff;
+    }
+  }
+  
+  /* Större viewport: Normal 3-kolumn struktur */
+  @media (min-width: 769px) {
+    .accordion-footer {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .accordion-item {
+      flex: 1;
+      margin-bottom: 0;
+    }
+  
+    .accordion-header {
+      cursor: default; 
+      background-color: transparent;
+      font-weight: bold;
+      font-size: 18px;
+      border: none;
+    }
+  
+    .accordion-content {
+      max-height: none; /* Tar bort accordion beteende */
+      overflow: visible;
+      padding: 0;
+    }
+  
+    .accordion-content ul {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .similar-products-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* General Slideshow Container Styles */
+  .slideshow-container {
+    display: none; /* Hidden by default for mobile */
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .slideshow {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+  }
+  
+  .slide {
+    flex: 0 0 33.33%; /* Varje produkt kort tar upp 33.33% */
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .slide img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .slide h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+  }
+  
+  .slide p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
+  .price {
+    font-weight: bold;
+    font-size: 16px;
+    color: #ff5a5f;
+  }
+  
+  /* Vänster och höger knapp */
+  button.prev, button.next {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  button.prev {
+    left: 0; 
+  }
+  
+  button.next {
+    right: 0;
+  }
+  
+  button.prev:hover, button.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Media Query: Slideshow visas enbart på enhter större än 640px */
+  @media (min-width: 640px) {
+    .slideshow-container {
+      display: block;
+    }
+  }
+  
+  /* Göm slideshow på mobil */
+  @media (max-width: 639px) {
+    .slideshow-container {
+      display: none;
+    }
+    .similar-products-container h2 {
+        display: none;
+    }
+  }
+
+  .checkout-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 140px;
+  }
+  
+  .checkout-container > h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .custom-details {
+    margin-top: 40px;
+  }
+   
+  .product-table-container {
+    display: none;
+  }
+  
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .product-table th, .product-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .product-table th {
+    background-color: #f0f0f0;
+  }
+  
+  .checkout-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .checkout-form label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .checkout-form input {
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .form-group {
+    width: 48%;
+  }
+  
+  .newsletter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .newsletter input {
+    margin-right: 10px;
+  }
+  
+  .buy-button {
+    background-color: #ff5a5f;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .buy-button:hover {
+    background-color: #e04448;
+  }
+  
+.mobile-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-layout .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #000;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.mobile-layout .details p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.mobile-layout .details small {
+  font-size: 0.8rem;
+  color: grey;
+}
+
+.mobile-layout .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+  /* Responsiv för enheter större än mobil */
+  @media (min-width: 640px) {
+    .checkout-container {
+      max-width: 800px;
+    }
+  
+    .product-table-container {
+      display: block;
+    }
+    
+    .form-row {
+      display: flex;
+      gap: 20px;
+    }
+
+    .mobile-layout {
+      display: none;
+    }
+
+    .custom-details {
+      text-align: left;
+      margin-top: 40px;
+    }
+  }
+
+/* HÄR BÖRJAR CSS FÖR ADMIN PRODUKTER SIDAN */
+
+.admin-navbar {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+}
+
+.admin-navbar h1 {
+    font-size: 24px;
+}
+
+.admin-container {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.admin-header h1 {
+    font-size: 24px;
+}
+
+.btn-new-product {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    text-align: left;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.icon-edit, .icon-delete {
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+
+.icon-edit:hover {
+    color: green;
+}
+
+.icon-delete:hover {
+    color: red;
+}
+
+.admin-navbar > h1 {
+    text-align: left;
+    margin: 10px 0px;
+}
+
+form.product-form {
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    height: 100px;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+}
+
+.checkbox-group label {
+    display: block;
+    margin-top: 5px;
+}
+
+.btn-submit {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
 }

@@ -8,6 +8,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+
+    <!-- Header sektion som innehåller navbar med logo, länkar och sökruta -->
     <header class="header">
         <a href="#">
             <img src="img/LogoV5.png" alt="" width="100px">
@@ -27,8 +29,15 @@
             <a href="#"><i class='bx bxs-heart' ></i></a>
             <a href="#"><i class='bx bxs-cart' ></i></i></a>
         </nav>
+
+        <!-- Sök -->
+        <div class="search-container">
+            <input type="text" placeholder="Sök..." class="search-input">
+            <button class="search-btn"><i class='bx bx-search'></i></button>
+        </div>
     </header>
 
+    <!-- Hero sektion - den stora bilden med text ovanpå -->
     <main>
         <section id="hero">
             <div class="container">
@@ -39,78 +48,115 @@
                 </div>
             </div>
         </section>
-
-        <!-- Product Section -->
+    <!-- Här har vi de 3 rutorna "spots" -->
+        <div class="spots-section">
+            <a href="link1.html" class="spot">
+                <div class="image-container">
+                    <img src="img/svart3.jpg" alt="Spot 1">
+                    <div class="text-overlay">Lorem ipsum dolor</div>
+                </div>
+            </a>
+            <a href="link2.html" class="spot">
+                <div class="image-container">
+                    <img src="img/svart3.jpg" alt="Spot 2">
+                    <div class="text-overlay">Lorem ipsum dolor</div>
+                </div>
+            </a>
+            <a href="link3.html" class="spot">
+                <div class="image-container">
+                    <img src="img/svart3.jpg" alt="Spot 3">
+                    <div class="text-overlay">Lorem ipsum dolor</div>
+                </div>
+            </a>
+        </div>
+        
+    <!-- Produkt sektion 2x4 -->
         <section class="product-section">
-            <div class="product-card">
-                <div class="new-badge">New</div>
-                <img src="img/Hoodie.jpeg" alt="Product 1">
-                <div class="product-info">
-                    <span class="product-name">Hoodie</span>
-                    <span class="product-price">149kr</span>
+            <a href="product-details.html">
+                <div class="product-card">
+                    <div class="new-badge">New</div>
+                    <img src="img/svart2.jpg" alt="Product 1">
+                    <div class="product-info">
+                        <span class="product-name">Svart T-Shirt</span>
+                        <span class="product-price">149kr</span>
+                    </div>
+                    <i class='bx bxs-heart'></i>
                 </div>
-                <i class='bx bxs-heart'></i>
-            </div>
-            <div class="product-card">
-                <img src="img/Hoodie.jpeg" alt="Product 2">
-                <div class="product-info">
-                    <span class="product-name">Hoodiee </span>
-                    <span class="product-price">179kr</span>
+            </a>
+            <a href="product-details.html">
+                <div class="product-card">
+                    <img src="img/svart1.jpg" alt="Product 2">
+                    <div class="product-info">
+                        <span class="product-name">Svart T-Shirt 2</span>
+                        <span class="product-price">179kr</span>
+                    </div>
+                    <i class='bx bxs-heart'></i>
                 </div>
-                <i class='bx bxs-heart'></i>
-            </div>
-            <div class="product-card">
-                <img src="img/Hoodie.jpeg" alt="Product 3">
-                <div class="product-info">
-                    <span class="product-name">Hodieee</span>
-                    <span class="product-price">299kr</span>
+            </a>
+            <a href="product-details.html">
+                <div class="product-card">
+                    <img src="img/svart4.jpg" alt="Product 3">
+                    <div class="product-info">
+                        <span class="product-name">Svart T-Shirt 3</span>
+                        <span class="product-price">299kr</span>
+                    </div>
+                    <i class='bx bxs-heart'></i>
                 </div>
-                <i class='bx bxs-heart'></i>
-            </div>
-            <div class="product-card">
-                <img src="img/Hoodie.jpeg" alt="Product 4">
-                <div class="product-info">
-                    <span class="product-name">Hodieeee</span>
-                    <span class="product-price">349kr</span>
+            </a>
+            <a href="product-details.html">
+                <div class="product-card">
+                    <img src="img/svart9.jpg" alt="Product 4">
+                    <div class="product-info">
+                        <span class="product-name">Svart T-Shirt 4</span>
+                        <span class="product-price">349kr</span>
+                    </div>
+                    <i class='bx bxs-heart'></i>
                 </div>
-                <i class='bx bxs-heart'></i>
-            </div>
+            </a>
 
-            <div class="product-card">
-                <img src="img/Hoodie.jpeg" alt="Product 1">
-                <div class="product-info">
-                    <span class="product-name">Hoodie</span>
-                    <span class="product-price">149kr</span>
+            <a href="product-details.html">
+                <div class="product-card">
+                    <img src="img/svart8.jpg" alt="Product 1">
+                    <div class="product-info">
+                        <span class="product-name">Svart T-Shirt</span>
+                        <span class="product-price">149kr</span>
+                    </div>
+                    <i class='bx bxs-heart'></i>
                 </div>
-                <i class='bx bxs-heart'></i>
-            </div>
-            <div class="product-card">
-                <img src="img/Hoodie.jpeg" alt="Product 2">
-                <div class="product-info">
-                    <span class="product-name">Hoodiee </span>
-                    <span class="product-price">179kr</span>
+            </a>
+            <a href="product-details.html">
+                <div class="product-card">
+                    <img src="img/svart7.jpg" alt="Product 2">
+                    <div class="product-info">
+                        <span class="product-name">Svart T-Shirt 2</span>
+                        <span class="product-price">179kr</span>
+                    </div>
+                    <i class='bx bxs-heart'></i>
                 </div>
-                <i class='bx bxs-heart'></i>
-            </div>
-            <div class="product-card">
-                <img src="img/Hoodie.jpeg" alt="Product 3">
-                <div class="product-info">
-                    <span class="product-name">Hodieee</span>
-                    <span class="product-price">299kr</span>
+            </a>
+            <a href="product-details.html">
+                <div class="product-card">
+                    <img src="img/svart6.jpg" alt="Product 3">
+                    <div class="product-info">
+                        <span class="product-name">Svart T-Shirt 3</span>
+                        <span class="product-price">299kr</span>
+                    </div>
+                    <i class='bx bxs-heart'></i>
                 </div>
-                <i class='bx bxs-heart'></i>
-            </div>
-            <div class="product-card">
-                <img src="img/Hoodie.jpeg" alt="Product 4">
-                <div class="product-info">
-                    <span class="product-name">Hodieeee</span>
-                    <span class="product-price">349kr</span>
+            </a>
+            <a href="product-details.html">
+                <div class="product-card">
+                    <img src="img/svart3.jpg" alt="Product 4">
+                    <div class="product-info">
+                        <span class="product-name">Svart T-Shirt 4</span>
+                        <span class="product-price">349kr</span>
+                    </div>
+                    <i class='bx bxs-heart'></i>
                 </div>
-                <i class='bx bxs-heart'></i>
-            </div>
+            </a>
         </section>
 
-        <!-- Icon and Text Section -->
+        <!-- Ikon och text sektion -->
         <section class="icon-text-section">
             <div class="icon-text">
                 <i class='bx bx-world'></i>
@@ -131,5 +177,50 @@
         </section>
 
     </main>
+
+        <!-- Footern med accordion -->
+    <footer>
+        <div class="accordion-footer">
+            <div class="accordion-item">
+              <button class="accordion-header">Shopping</button>
+              <div class="accordion-content">
+                <ul>
+                  <li><a href="#">Vinterjackor</a></li>
+                  <li><a href="#">Pufferjackor</a></li>
+                  <li><a href="#">Kappa</a></li>
+                  <li><a href="#">Trenchcoats</a></li>
+                </ul>
+              </div>
+            </div>
+        
+            <div class="accordion-item">
+              <button class="accordion-header">Mina sidor</button>
+              <div class="accordion-content">
+                <ul>
+                  <li><a href="#">Mina Ordrar</a></li>
+                  <li><a href="#">Mitt Konto</a></li>
+                </ul>
+              </div>
+            </div>
+        
+            <div class="accordion-item">
+              <button class="accordion-header">Kundtjänst</button>
+              <div class="accordion-content">
+                <ul>
+                  <li><a href="#">Returnpolicy</a></li>
+                  <li><a href="#">Integritetspolicy</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+           <!-- Copyright -->
+            <div class="copyright-section">
+                &copy; Freaky Fashion
+            </div>
+
+          <!-- Länk till JavaScript filen -->
+          <script src="accordion.js"></script>
+    </footer>
 </body>
-</html>
+</html> 
